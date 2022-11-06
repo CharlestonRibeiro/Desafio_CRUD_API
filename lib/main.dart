@@ -1,6 +1,5 @@
+import 'package:app_consumer_api/views/home_page.dart';
 import 'package:flutter/material.dart';
-
-import 'page/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Consumer API',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(  
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: const HomePage(),
