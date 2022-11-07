@@ -21,15 +21,20 @@ class DatasController {
     }
   }
 
+/*
   Future<void> update() async {
-    final datas = await _datasRepository.findByIdDatas("1");
+    const String id = "63693bc875250203e82f480a";
+    var datas = await _datasRepository.findByIdDatas(id);;
     await _datasRepository.updateDatas(datas);
-    
+    if (kDebugMode) {
+      print(datas);
+    }
   }
+*/  
 
   Future<void> insert() async {
-    final datas = DatasModel(
-      id: "11", userId: 5, title: 'test insert API', completed: true);
+    final datas =
+        DatasModel(userId: 3, title: 'API ', completed: true);
     _datasRepository.insertDatas(datas);
     if (kDebugMode) {
       print(datas);

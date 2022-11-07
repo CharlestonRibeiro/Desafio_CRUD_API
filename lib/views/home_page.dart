@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final int id = 1;
+  final String id = "63693bc875250203e82f480a" ;
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +33,11 @@ class _HomePageState extends State<HomePage> {
               ElevatedButton(
                   onPressed: () {
                     if (kDebugMode) {
-                      print(DatasController().findBydId(id.toString()));
+                      print(DatasController().findBydId(id));
                     }
                   },
                   child: const Text('Get by id')),
-
+/*
              ElevatedButton(
                   onPressed: () {
                     if (kDebugMode) {
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                   },
                   child: const Text('Update')),
 
-
+*/
 
              ElevatedButton(
                   onPressed: () {
