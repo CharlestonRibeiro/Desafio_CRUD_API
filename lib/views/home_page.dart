@@ -1,4 +1,4 @@
-import 'package:app_consumer_api/controller/activities_controller.dart';
+import 'package:app_consumer_api/controller/datas_controller.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +10,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  //final String id = "63670abe75250203e82f42e4";
   final int id = 1;
 
   @override
@@ -26,7 +25,7 @@ class _HomePageState extends State<HomePage> {
               ElevatedButton(
                   onPressed: () {
                     if (kDebugMode) {
-                      print(ActivitiesController().findAll());
+                      print(DatasController().findAll());
                     }
                   },
                   child: const Text('Get all')),
@@ -34,7 +33,7 @@ class _HomePageState extends State<HomePage> {
               ElevatedButton(
                   onPressed: () {
                     if (kDebugMode) {
-                      print(ActivitiesController().findBydId(id));
+                      print(DatasController().findBydId(id.toString()));
                     }
                   },
                   child: const Text('Get by id')),
@@ -42,7 +41,7 @@ class _HomePageState extends State<HomePage> {
              ElevatedButton(
                   onPressed: () {
                     if (kDebugMode) {
-                      print(ActivitiesController().update());
+                      print(DatasController().update());
                     }
                   },
                   child: const Text('Update')),
@@ -52,7 +51,7 @@ class _HomePageState extends State<HomePage> {
              ElevatedButton(
                   onPressed: () {
                     if (kDebugMode) {
-                      print(ActivitiesController().insert());
+                      print(DatasController().insert());
                     }
                   },
                   child: const Text('Insert')),          
