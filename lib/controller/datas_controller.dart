@@ -5,8 +5,17 @@ import 'package:flutter/foundation.dart';
 class DatasController {
   final _datasRepository = DatasRepository();
 
-  Future<void> findAll() async {
-    final datas = await _datasRepository.findAllDatas();
+  Future<void> create() async {
+    final datas = DatasModel(userId: "3", title: 'API ', completed: true);
+
+    _datasRepository.create(datas);
+    if (kDebugMode) {
+      print(datas);
+    }
+  }
+
+  Future<void> getAll() async {
+    final datas = await _datasRepository.getAll();
     for (var data in datas) {
       if (kDebugMode) {
         print(data);
@@ -14,30 +23,31 @@ class DatasController {
     }
   }
 
-  Future<void> findBydId(String id) async {
-    final datas = await _datasRepository.findByIdDatas(id);
+  Future<void> getById(String id) async {
+    final datas = await _datasRepository.getById(id);
     if (kDebugMode) {
       print(datas);
     }
   }
 
-/*
   Future<void> update() async {
-    const String id = "63693bc875250203e82f480a";
-    var datas = await _datasRepository.findByIdDatas(id);;
-    await _datasRepository.updateDatas(datas);
+    final item = DatasModel(
+      userId: "99",
+      title: 'title updated',
+      completed: false,
+    );
+
+    _datasRepository.update(
+        "636aa48175250203e82f4b72", item.userId, item.title, item.completed);
     if (kDebugMode) {
-      print(datas);
+      print(item);
     }
   }
-*/  
 
-  Future<void> insert() async {
-    final datas =
-        DatasModel(userId: 3, title: 'API ', completed: true);
-    _datasRepository.insertDatas(datas);
+  Future<void> delete(String id) async {
+    await _datasRepository.delete(id);
     if (kDebugMode) {
-      print(datas);
+      print('deletado');
     }
   }
 }

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 class DatasModel {
-  int userId;
+  String userId;
   String title;
   bool completed;
 
@@ -23,7 +23,7 @@ class DatasModel {
 //é um CONSTRUTOR ele vai pegar um MAP e transformar em objeto
   factory DatasModel.fromMap(Map<String, dynamic> map) {
     return DatasModel(
-      userId: map['userId'] as int,
+      userId: map['userId'] as String,
       title: map['title'] as String,
       completed: map['completed'] as bool,
     );

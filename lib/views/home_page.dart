@@ -10,7 +10,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final String id = "63693bc875250203e82f480a" ;
 
   @override
   Widget build(BuildContext context) {
@@ -23,40 +22,56 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                  onPressed: () {
-                    if (kDebugMode) {
-                      print(DatasController().findAll());
-                    }
-                  },
-                  child: const Text('Get all')),
-
+                onPressed: () {
+                  if (kDebugMode) {
+                    print(DatasController().create());
+                  }
+                },
+                child: const Text(
+                  'CREATE',
+                ),
+              ),
               ElevatedButton(
-                  onPressed: () {
-                    if (kDebugMode) {
-                      print(DatasController().findBydId(id));
-                    }
-                  },
-                  child: const Text('Get by id')),
-/*
-             ElevatedButton(
-                  onPressed: () {
-                    if (kDebugMode) {
-                      print(DatasController().update());
-                    }
-                  },
-                  child: const Text('Update')),
-
-*/
-
-             ElevatedButton(
-                  onPressed: () {
-                    if (kDebugMode) {
-                      print(DatasController().insert());
-                    }
-                  },
-                  child: const Text('Insert')),          
-
-                
+                onPressed: () {
+                  if (kDebugMode) {
+                    print(DatasController().getAll());
+                  }
+                },
+                child: const Text(
+                  'READ (ALL)',
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  if (kDebugMode) {
+                    print(
+                        DatasController().getById("636aa48175250203e82f4b72"));
+                  }
+                },
+                child: const Text(
+                  'READ (BY ID)',
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  if (kDebugMode) {
+                    print(DatasController().update());
+                  }
+                },
+                child: const Text(
+                  'UPDATE',
+                ),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  if (kDebugMode) {
+                    print(DatasController().delete("636aa48175250203e82f4b72"));
+                  }
+                },
+                child: const Text(
+                  'DELETE',
+                ),
+              ),
             ],
           ),
         ));
